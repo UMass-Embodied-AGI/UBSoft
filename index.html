@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="A Simulation Platform for Robotic Skill Learning in Unbounded Soft Environments">
+  <meta name="keywords" content="Soft-Body Manipulation, Locomotion, Physics Simulation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UBSOFT: A Simulation Platform for Robotic Skill Learning in Unbounded Soft Environments</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">UBSOFT: A Simulation Platform for Robotic Skill Learning in Unbounded Soft Environments</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://chunru-lin.github.io/">Chunru Lin</a><sup>1</sup>*</span>,
+            <span class="author-block">
+              <a href="https://github.com/felixfjg">Jugang Fan</a><sup>1</sup>*</span>,
+            <span class="author-block">
+              <a href="https://wangyian-me.github.io/">Yian Wang</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://miicheyang.github.io/">Zeyuan Yang</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://acmlczh.github.io/">Zhehuan Chen</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://owenowl.github.io/">Lixing Fang</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://zswang666.github.io/">Tsun-Hsuan Wang</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.zhou-xian.com/">Zhou Xian</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://people.csail.mit.edu/ganchuang/">Chuang Gan</a><sup>1,4</sup>
+            </span>
+            <!-- <span>
+              Anonymous Author(s)
+            </span> -->
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of Massachusetts Amherst,</span>
+            <span class="author-block"><sup>2</sup>Massachusetts Institute of Technology,</span>
+            <span class="author-block"><sup>3</sup>Carnegie Mellon University</span>
+            <span class="author-block"><sup>4</sup>MIT-IBM Watson AI Lab</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://ubsoft24.github.io"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://ubsoft24.github.io"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://ubsoft24.github.io"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 1.Teaser. -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/teaser.mp4"
+                type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section>
+<!--/ Teaser. -->
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- 2.Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            It is desired to equip robots with the capability of interacting with various
+            soft materials as they are ubiquitous in the real world. While physics simulations
+            are one of the predominant methods for data collection and robot training, simulating 
+            soft materials presents considerable challenges. Specifically, it is significantly
+            more costly than simulating rigid objects in terms of simulation speed and storage
+            requirements. These limitations typically restrict the scope of studies on soft materials
+            to small and bounded areas, thereby hindering the learning of skills in broader
+            spaces. To address this issue, we introduce <b>UBSOFT</b>, a new simulation platform
+            designed to support unbounded soft environments for robot skill acquisition. Our
+            platform utilizes spatially adaptive resolution scales, where simulation resolution
+            dynamically adjusts based on proximity to active robotic agents. Our framework
+            markedly reduces the demand for extensive storage space and computation costs
+            required for large-scale scenarios involving soft materials. We also establish a set
+            of benchmark tasks in our platform, including both locomotion and manipulation
+            tasks, and conduct experiments to evaluate the efficacy of various reinforcement
+            learning algorithms and trajectory optimization techniques, both gradient-based
+            and sampling-based. Preliminary results indicate that sampling-based trajectory
+            optimization generally achieves better results for obtaining one trajectory to solve
+            the task. Additionally, we conduct experiments in real-world environments to
+            demonstrate that advancements made in our <b>UBSOFT</b> simulator could translate
+            to improved robot interactions with large-scale soft material.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 3.Task Gallery. -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="hero-body has-text-centered">
+      <h2 class="title is-3">Task Gallery</h2>
+
+      <div class="columns is-centered">
+        <!-- Manipulation. -->
+        <div class="column">
+          <h2 class="title is-4">Manipulation</h2>
+          <div class="columns is-centered">
+            <div class="column content">
+              <video id="matting-video" controls muted loop playsinline height="100%">
+                <source src="./static/videos/task-drawheart-v2.mp4"
+                        type="video/mp4">
+              </video>
+              <p>Sand Painting</p>
+            </div>
+            <div class="column content">
+              <video id="matting-video" controls muted loop playsinline height="100%">
+                <source src="./static/videos/task-scoop-v3.mp4"
+                        type="video/mp4">
+              </video>
+              <p>Scoop Out</p>
+            </div>
+          </div>
+          <div class="columns is-centered">
+            <div class="column content">
+              <video id="matting-video" controls muted loop playsinline height="100%">
+                <source src="./static/videos/task-dig-v2.mp4"
+                        type="video/mp4">
+              </video>
+              <p>Dig A Hole</p>
+            </div>
+            <div class="column content">
+              <video id="matting-video" controls muted loop playsinline height="100%">
+                <source src="./static/videos/task-smooth-v2.mp4"
+                        type="video/mp4">
+              </video>
+              <p>Smooth Surface</p>
+            </div>
+          </div>
+        </div>
+        <!--/ Manipulation. -->
+        <!-- Locomotion -->
+        <div class="column">
+          <h2 class="title is-4">Locomotion</h2>
+          <div class="columns is-centered">
+            <div class="column content">
+              <video id="matting-video" controls muted loop playsinline height="100%">
+                <source src="./static/videos/task-dogwalksand.mp4"
+                        type="video/mp4">
+              </video>
+              <p>Quadruped Sand Walk</p>
+            </div>
+            <div class="column content">
+              <video id="matting-video" controls muted loop playsinline height="100%">
+                <source src="./static/videos/task-dogwalksnow.mp4"
+                        type="video/mp4">
+              </video>
+              <p>Quadruped Snow Walk</p>
+            </div>
+          </div>
+          <div class="columns is-centered">
+            <div class="column content">
+              <video id="matting-video" controls muted loop playsinline height="100%">
+                <source src="./static/videos/task-humanstand.mp4"
+                        type="video/mp4">
+              </video>
+              <p>Humanoid Stand</p>
+            </div>
+            <div class="column content">
+              <video id="matting-video" controls muted loop playsinline height="100%">
+                <source src="./static/videos/task-humanwalk.mp4"
+                        type="video/mp4">
+              </video>
+              <p>Humanoid Walk</p>
+            </div>
+          </div>
+        </div>
+        <!--/ Locomotion -->
+      </div>
+
+      <h2 class="subtitle has-text-centered">
+        4 manipulation tasks and 4 locomotion tasks proposed in UBSOFT
+      </h2>
+    </div>
+  </div>
+
+</section>
+<!--/ Task Gallery. -->
+
+<!-- 4.Real-World Exp. -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="hero-body has-text-centered">
+      <h2 class="title is-3">Real-World Experiments</h2>
+      
+      <div class="columns is-centered">
+        <!-- Writing. -->
+        <div class="column">
+          <h2 class="title is-4">Writing "CoRL"</h2>
+          <div class="columns is-centered">
+            <div class="column content">
+              <video id="matting-video" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/realworld-writeCoRL.mp4"
+                        type="video/mp4">
+              </video>
+              <p>
+              </p>
+            </div>
+
+          </div>
+        </div>
+        <!--/ Writing. -->
+        <!-- Scoop -->
+        <div class="column">
+          <div class="content">
+            <h2 class="title is-4">Scoop Out</h2>
+            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/realworld-scoop.mp4"
+                      type="video/mp4">
+            </video>
+            <p>
+            </p>
+          </div>
+        </div>
+        <!--/ Scoop -->
+      </div>
+      
+      <h2 class="subtitle has-text-centered">
+        Sand painting and scooping task rollouts in the real world using an XArm.<br>
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="https://github.com/UBSoft24" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Website built upon 
+            <a
+              href="https://github.com/nerfies/nerfies.github.io">Nerfies'
+            </a> 
+            open-source template
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
